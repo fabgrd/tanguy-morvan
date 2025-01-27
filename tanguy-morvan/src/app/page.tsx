@@ -40,9 +40,6 @@ export default function Home() {
         </h1>
       </header>
 
-      {/* Main Content */}
-  
-
       {/* Project List */}
       <footer className="px-10 py-5">
         <ProjectList />
