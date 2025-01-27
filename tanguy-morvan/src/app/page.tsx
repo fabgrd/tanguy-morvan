@@ -3,7 +3,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import ProjectList from './projects/projectList';
+// import ProjectList from '../lib/projectList';
+import ProjectList from './components/ProjectList';
+import { urlFor } from '../sanity/lib/image';
 
 export default function Home() {
   const [isContentVisible, setIsContentVisible] = useState(false);
@@ -39,16 +41,7 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="flex flex-grow relative">
-        {/* Image above the list */}
-        <div
-          className={`absolute right-10 top-10 w-[300px] h-[400px] bg-gray-300 flex justify-center items-center transition-opacity duration-700 ${
-            isContentVisible ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <span className="text-black text-lg font-bold">Image Placeholder</span>
-        </div>
-      </main>
+  
 
       {/* Project List */}
       <footer className="px-10 py-5">
