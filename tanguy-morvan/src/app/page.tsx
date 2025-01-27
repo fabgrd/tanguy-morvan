@@ -52,7 +52,7 @@ export default function Home() {
 
       {/* Project List */}
       <footer className="px-10 py-5">
-        {/* <ProjectList /> */}
+        <ProjectList />
 
         {/* Footer */}
         <Link href="/all" className="text-white text-sm font-medium">

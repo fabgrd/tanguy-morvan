@@ -18,7 +18,7 @@ export async function getProject(slug: string) {
   const project = await client.fetch(query, { slug })
   console.log('Fetched project:', project)
   return project
-}
+} 
 
 export async function getProjectPaths() {
   const query = groq`
@@ -35,3 +35,5 @@ export async function getProjectPaths() {
 }
 const project = await getProject('notes-on-rooms-and-gardening')
 console.log("--------PROJET : ", project)
+const project2 = await getProject('twenty-first-century-trends')
+console.log("--------PROJET : ", project2)
