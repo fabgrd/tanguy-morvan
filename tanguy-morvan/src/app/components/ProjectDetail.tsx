@@ -11,7 +11,6 @@ interface ProjectDetailProps {
 const ProjectDetail = ({ project }: ProjectDetailProps) => {
   if (!project) return <p>Projet non trouvé</p>;
 
-  // Extraire les images du projet
   const images = project.images || [];
   const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -22,7 +21,6 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
 
         // Si le défilement est vertical (deltaY différent de 0)
         if (e.deltaY !== 0) {
-          // Appliquer un défilement horizontal basé sur la valeur de deltaY
           scrollContainer.scrollLeft += e.deltaY;
         }
       }

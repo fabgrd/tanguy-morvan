@@ -2,8 +2,8 @@ import { client } from '@/sanity/lib/client'
 import { groq } from 'next-sanity'
 
 export async function getProject(slug: string) {
-    
-  const query = groq`
+
+    const query = groq`
     *[_type == "project" && slug.current == $slug][0] {
       title,
       year,
@@ -14,18 +14,29 @@ export async function getProject(slug: string) {
       }
     }
   `
-  const project = await client.fetch(query, { slug })
-  return project
-} 
+    const project = await client.fetch(query, { slug })
+    return project
+}
 
 export async function getProjectPaths() {
-  const query = groq`
+    const query = groq`
     *[_type == "project"] {
       "slug": slug.current
     }
   `
-  const paths = await client.fetch(query)
-  return paths.map((path: { slug: string }) => ({
-    params: { slug: path.slug },
-  }))
+    const paths = await client.fetch(query)
+    return paths.map((path: { slug: string }) => ({
+        params: { slug: path.slug },
+    }))
 }
+
+export const getAllProjects = async () => {
+    const query = groq`
+    *[_type == "project"]{
+      _id,
+      title,
+      "imageUrl": images[].asset->url // Récupère les URLs des images
+    }`;
+    const projects = await client.fetch(query);
+    return projects;
+};
