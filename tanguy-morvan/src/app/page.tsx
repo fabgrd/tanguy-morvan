@@ -46,9 +46,9 @@ export default function Home() {
         <ProjectList />
 
         {/* Footer */}
-        {/* <Link href="/all" className="text-white text-sm font-medium"> */}
+        <Link href="/all" className="text-white text-sm font-medium">
           All
-        {/* </Link> */}
+        </Link>
       </footer>
     </div>
   );
