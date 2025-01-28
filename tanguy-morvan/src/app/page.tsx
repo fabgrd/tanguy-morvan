@@ -1,11 +1,11 @@
 // tanguy-morvan/src/app/page.tsx
 "use client";
+export const dynamic = "force-dynamic"; 
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
 // import ProjectList from '../lib/projectList';
 import ProjectList from './components/ProjectList';
-import { urlFor } from '../sanity/lib/image';
 
 export default function Home() {
   const [isContentVisible, setIsContentVisible] = useState(false);
@@ -41,13 +41,14 @@ export default function Home() {
       </header>
 
       {/* Project List */}
-      <footer className="px-10 py-5">
+      <footer className={`px-10 py-5 ${isContentVisible ? "opacity-100" : "opacity-0"
+        }`}>
         <ProjectList />
 
         {/* Footer */}
-        <Link href="/all" className="text-white text-sm font-medium">
+        {/* <Link href="/all" className="text-white text-sm font-medium"> */}
           All
-        </Link>
+        {/* </Link> */}
       </footer>
     </div>
   );

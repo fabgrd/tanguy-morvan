@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { urlFor } from '@/sanity/lib/image';
 import { Project } from '@/types/project';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function ProjectListWithHover({ projects }: { projects: Project[] }) {
@@ -13,7 +14,9 @@ export default function ProjectListWithHover({ projects }: { projects: Project[]
       {/* Images Preview */}
       {hoveredImage && (
         <div className="absolute bottom-full left-0 flex">
-          <img
+          <Image
+            width={200}
+            height={200}
             src={hoveredImage}
             alt="Preview"
             className="max-w-full max-h-60 object-contain transition-transform duration-300"
@@ -34,11 +37,11 @@ export default function ProjectListWithHover({ projects }: { projects: Project[]
             }
             onMouseLeave={() => setHoveredImage(null)}
           >
-            <Link
-              href={`/projects/${project.slug.current}`}
+            <Link href={`${project.slug.current}`}
               className="flex justify-between w-full"
             >
               <span className="text-left">{index + 1}. {project.title}</span>
+              <span className="text-middle mb-3">{project.slug.current}</span>
               <span className="text-right">{project.year}</span>
             </Link>
           </li>

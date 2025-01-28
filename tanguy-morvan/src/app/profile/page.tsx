@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 
 export default function Profile() {
   return (
@@ -33,7 +32,7 @@ export default function Profile() {
           <ul className="list-disc pl-6">
             <li>Area of Work, Paris — Designer</li>
             <li>
-              ECAL, École Cantonale d'Art de Lausanne — MA Teaching Assistant
+              ECAL, École Cantonale d&apos;Art de Lausanne — MA Teaching Assistant
             </li>
             <li>Geneva — Freelance Graphic Designer and Image Maker</li>
           </ul>
@@ -63,10 +62,10 @@ export default function Profile() {
               Workshop at Junior Design Research Conference - Geneva 2024
             </li>
             <li>
-              Group exhibition "Frontière de Sabiha" SACBA - Chiasso 2024
+              Group exhibition &quot;Frontière de Sabiha&quot; SACBA - Chiasso 2024
             </li>
             <li>
-              "Optometric Vision Therapy" published for OFFPRINT - Paris 2023
+            &quot;Optometric Vision Therapy&quot; published for OFFPRINT - Paris 2023
             </li>
             <li>Lecture at Ledger - Paris 2021</li>
           </ul>

@@ -1,35 +1,14 @@
-import { getProjectPaths, getProject } from '@/lib/sanity.utils'
-import { Project } from '@/types/project'
+"use client"
+import React from 'react';
 
-export const generateStaticParams = async () => {
-    const paths = await getProjectPaths()
-    console.log('Generated paths:', paths)
-  
-    // Check if paths is empty
-    if (paths.length === 0) {
-      return []
-    }
-  
-    return paths.map((path: { slug: string }) => ({
-      slug: path.slug,
-    }))
-  }
-
-export const generateMetadata = async ({ params }: { params: { slug: string } }) => {
-  const project = await getProject(params.slug)
-  console.log('Fetched project metadata:', project)
-  return {
-    title: project.title,
-  }
-}
-
-export default async function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = await getProject(params.slug)
-  console.log('Fetched project data:', project)
+const ProjectsPage = () => {
   return (
     <div>
-      <h1>{project.title}</h1>
-      {/* Add more details about the project */}
+      <h1>Projects</h1>
+      <p>Welcome to the projects page. Here you can find a list of our projects.</p>
+      {/* You can add more project details or components here */}
     </div>
-  )
-}
+  );
+};
+
+export default ProjectsPage;
