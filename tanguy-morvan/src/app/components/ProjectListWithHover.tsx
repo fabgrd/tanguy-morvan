@@ -41,7 +41,6 @@ export default function ProjectListWithHover({ projects }: { projects: Project[]
               className="flex justify-between w-full"
             >
               <span className="text-left">{index + 1}. {project.title}</span>
-              <span className="text-middle mb-3">{project.slug.current}</span>
               <span className="text-right">{project.year}</span>
             </Link>
           </li>
